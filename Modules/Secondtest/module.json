@@ -1,0 +1,13 @@
+{
+    "name": "Secondtest",
+    "alias": "secondtest",
+    "description": "",
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Modules\\Secondtest\\Providers\\SecondtestServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

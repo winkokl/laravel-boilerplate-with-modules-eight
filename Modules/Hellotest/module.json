@@ -1,0 +1,13 @@
+{
+    "name": "Hellotest",
+    "alias": "hellotest",
+    "description": "",
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Modules\\Hellotest\\Providers\\HellotestServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
