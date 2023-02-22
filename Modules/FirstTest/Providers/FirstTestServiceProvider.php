@@ -1,21 +1,21 @@
 <?php
 
-namespace Modules\SecondTest\Providers;
+namespace Modules\FirstTest\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class SecondTestServiceProvider extends ServiceProvider
+class FirstTestServiceProvider extends ServiceProvider
 {
     /**
      * @var string $moduleName
      */
-    protected $moduleName = 'SecondTest';
+    protected $moduleName = 'FirstTest';
 
     /**
      * @var string $moduleNameLower
      */
-    protected $moduleNameLower = 'secondtest';
+    protected $moduleNameLower = 'firsttest';
 
     /**
      * Boot the application events.

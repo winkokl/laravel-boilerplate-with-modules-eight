@@ -1,33 +1,33 @@
 <?php
 
-namespace Modules\Secondtest\Http\Controllers;
+namespace Modules\SecondTest\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use DataTables;
-use Modules\Secondtest\Repositories\SecondtestRepository;
-use Modules\Secondtest\Http\Requests\ManageSecondtestRequest;
+use Modules\SecondTest\Repositories\SecondTestRepository;
+use Modules\SecondTest\Http\Requests\ManageSecondTestRequest;
 
-class SecondtestTableController extends Controller
+class SecondTestTableController extends Controller
 {
     /**
-     * @var SecondtestRepository
+     * @var SecondTestRepository
      */
     protected $secondtest;
 
     /**
-     * @param SecondtestRepository $secondtest
+     * @param SecondTestRepository $secondtest
      */
-    public function __construct(SecondtestRepository $secondtest)
+    public function __construct(SecondTestRepository $secondtest)
     {
         $this->secondtest = $secondtest;
     }
 
     /**
-     * @param ManageSecondtestRequest $request
+     * @param ManageSecondTestRequest $request
      *
      * @return mixed
      */
-    public function __invoke(ManageSecondtestRequest $request)
+    public function __invoke(ManageSecondTestRequest $request)
     {
         return DataTables::of($this->secondtest->getForDataTable())
             ->addColumn('actions', function ($secondtest) {

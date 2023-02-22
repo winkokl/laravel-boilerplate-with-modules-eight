@@ -15,16 +15,16 @@ return [
 
     'backend' => [
             'sidebar' => [
-                'secondtest' => 'SecondTest Management',
-                'secondtest_bin' => 'SecondTest Bin',
+                'firsttest' => 'FirstTest Management',
+                'firsttest_bin' => 'FirstTest Bin',
             ],
-            'secondtest' => [
-                'all'        => 'All SecondTest',
-                'create'     => 'Create SecondTest',
-                'edit'       => 'Edit SecondTest',
-                'show'       => 'Show SecondTest',
-                'management' => 'SecondTest Management',
-                'main'       => 'SecondTest',
+            'firsttest' => [
+                'all'        => 'All FirstTest',
+                'create'     => 'Create FirstTest',
+                'edit'       => 'Edit FirstTest',
+                'show'       => 'Show FirstTest',
+                'management' => 'FirstTest Management',
+                'main'       => 'FirstTest',
             ]
         ]
 ];

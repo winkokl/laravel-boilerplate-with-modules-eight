@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\SecondTest\Http\Requests;
+namespace Modules\FirstTest\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ShowSecondTestRequest extends FormRequest
+class UpdateFirstTestRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -25,6 +25,6 @@ class ShowSecondTestRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth()->user()->can('admin.access.secondtest.view');
+        return auth()->user()->can('admin.access.firsttest.edit');
     }
 }

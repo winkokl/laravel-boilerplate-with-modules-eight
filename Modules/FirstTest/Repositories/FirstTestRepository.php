@@ -1,22 +1,22 @@
 <?php
 
-namespace Modules\SecondTest\Repositories;
+namespace Modules\FirstTest\Repositories;
 
-use Modules\SecondTest\Entities\SecondTest;
+use Modules\FirstTest\Entities\FirstTest;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SecondTestRepository.
+ * Class FirstTestRepository.
  */
-class SecondTestRepository extends BaseRepository
+class FirstTestRepository extends BaseRepository
 {
     /**
      * @return string
      */
-    public function __construct(SecondTest $model)
+    public function __construct(FirstTest $model)
     {
         $this->model = $model;
     }

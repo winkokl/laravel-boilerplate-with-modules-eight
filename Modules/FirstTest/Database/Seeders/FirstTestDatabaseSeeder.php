@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\SecondTest\Database\Seeders;
+namespace Modules\FirstTest\Database\Seeders;
 
 use Carbon\Carbon as Carbon;
 use Illuminate\Database\Seeder;
@@ -10,7 +10,7 @@ use App\Domains\Auth\Models\User;
 use App\Domains\Auth\Models\Permission;
 use App\Domains\Auth\Models\Role;
 
-class SecondTestDatabaseSeeder extends Seeder
+class FirstTestDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,7 +21,7 @@ class SecondTestDatabaseSeeder extends Seeder
     {
         // Model::unguard();
 
-        $lower_module = strtolower('SecondTest');
+        $lower_module = strtolower('FirstTest');
             $name = 'admin.access.'.$lower_module;
 
             $users = Permission::create([

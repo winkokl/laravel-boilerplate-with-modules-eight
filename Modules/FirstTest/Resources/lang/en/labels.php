@@ -13,22 +13,22 @@ return [
     |
     */
   'backend' => [
-                'secondtest' => [
-                    'create'     => 'Create SecondTest',
-                    'edit'       => 'Edit SecondTest',
-                    'management' => 'SecondTest Management',
-                    'list'       => 'SecondTest List',
-                    'show'       => 'SecondTest Detail',
+                'firsttest' => [
+                    'create'     => 'Create FirstTest',
+                    'edit'       => 'Edit FirstTest',
+                    'management' => 'FirstTest Management',
+                    'list'       => 'FirstTest List',
+                    'show'       => 'FirstTest Detail',
 
                     'table' => [
-                        'number_of_users' => 'Number of SecondTests',
+                        'number_of_users' => 'Number of FirstTests',
                         'sort'             => 'Sort',
                         'id'               => 'ID',
                         'name'             => 'Name',
                         'description'      => 'Description',
                         'created'          => 'Created',
                         'last_updated'     => 'Last Updated',
-                        'total'            => 'secondtest total|secondtest total',
+                        'total'            => 'firsttest total|firsttest total',
                         'actions'          => 'Actions',
                     ]
                 ]

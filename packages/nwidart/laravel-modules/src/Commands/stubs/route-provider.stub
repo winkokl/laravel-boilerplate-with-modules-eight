@@ -35,7 +35,7 @@ class $CLASS$ extends ServiceProvider
     {
         // $this->mapApiRoutes();
 
-        // $this->mapWebRoutes();
+        $this->mapWebRoutes();
     }
 
     /**
@@ -48,7 +48,7 @@ class $CLASS$ extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->namespace($this->moduleNamespace)
+            // ->namespace($this->moduleNamespace)
             ->group(module_path('$MODULE$', '$WEB_ROUTES_PATH$'));
     }
 

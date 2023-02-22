@@ -234,10 +234,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'wk',
+        'vendor' => 'winko',
         'author' => [
-            'name' => 'wk',
-            'email' => 'wk@gmail.com',
+            'name' => 'winko',
+            'email' => 'winkokoheinkw@gmail.com',
         ],
     ],
 

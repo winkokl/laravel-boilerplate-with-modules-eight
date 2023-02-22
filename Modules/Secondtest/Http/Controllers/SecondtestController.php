@@ -1,16 +1,35 @@
 <?php
 
-namespace Modules\Secondtest\Http\Controllers;
+namespace Modules\SecondTest\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\SecondTest\Entities\SecondTest;
+use Modules\SecondTest\Http\Requests\ManageSecondTestRequest;
+use Modules\SecondTest\Http\Requests\CreateSecondTestRequest;
+use Modules\SecondTest\Http\Requests\UpdateSecondTestRequest;
+use Modules\SecondTest\Http\Requests\ShowSecondTestRequest;
+use Modules\SecondTest\Repositories\SecondTestRepository;
 
-class SecondtestController extends Controller
+class SecondTestController extends Controller
 {
+ /**
+     * @var SecondTestRepository
+     * @var CategoryRepository
+     */
+    protected $secondtest;
+
+    /**
+     * @param SecondTestRepository $secondtest
+     */
+    public function __construct(SecondTestRepository $secondtest)
+    {
+        $this->secondtest = $secondtest;
+    }
     /**
      * Display a listing of the resource.
-     * @return Renderable
+     * @return Response
      */
     public function index()
     {
@@ -19,7 +38,7 @@ class SecondtestController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @return Renderable
+     * @return Response
      */
     public function create()
     {
@@ -28,52 +47,59 @@ class SecondtestController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
+     * @param  Request $request
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(CreateSecondTestRequest $request)
     {
-        //
+        $this->secondtest->create($request->except('_token','_method'));
+        return redirect()->route('admin.secondtest.index')->withFlashSuccess(trans('secondtest::alerts.backend.secondtest.created'));
     }
 
     /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
+     * @param SecondTest              $secondtest
+     * @param ManageSecondTestRequest $request
+     *
+     * @return mixed
      */
-    public function show($id)
+    public function edit(SecondTest $secondtest, ManageSecondTestRequest $request)
     {
-        return view('secondtest::show');
+        return view('secondtest::edit')
+            ->withSecondTest($secondtest);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
+     * @param SecondTest              $secondtest
+     * @param UpdateSecondTestRequest $request
+     *
+     * @return mixed
      */
-    public function edit($id)
+    public function update(SecondTest $secondtest, UpdateSecondTestRequest $request)
     {
-        return view('secondtest::edit');
+        $this->secondtest->updateById($secondtest->id,$request->except('_token','_method'));
+
+        return redirect()->route('admin.secondtest.index')->withFlashSuccess(trans('secondtest::alerts.backend.secondtest.updated'));
     }
 
     /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
+     * @param SecondTest              $secondtest
+     * @param ManageSecondTestRequest $request
+     *
+     * @return mixed
      */
-    public function update(Request $request, $id)
+    public function show(SecondTest $secondtest, ShowSecondTestRequest $request)
     {
-        //
+        return view('secondtest::show')->withSecondTest($secondtest);
     }
 
     /**
      * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
+     * @return Response
      */
-    public function destroy($id)
+    public function destroy(SecondTest $secondtest)
     {
-        //
+        $this->secondtest->deleteById($secondtest->id);
+
+        return redirect()->route('admin.secondtest.index')->withFlashSuccess(trans('secondtest::alerts.backend.secondtest.deleted'));
     }
 }

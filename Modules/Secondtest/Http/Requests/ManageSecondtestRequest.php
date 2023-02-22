@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Secondtest\Http\Requests;
+namespace Modules\SecondTest\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ManageSecondtestRequest extends FormRequest
+class ManageSecondTestRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

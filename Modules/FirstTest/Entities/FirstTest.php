@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\SecondTest\Entities;
+namespace Modules\FirstTest\Entities;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class SecondTest extends Model
+class FirstTest extends Model
 {
     use SoftDeletes;
      /**
@@ -13,7 +13,7 @@ class SecondTest extends Model
      *
      * @var string
      */
-    protected $table = 'secondtest';
+    protected $table = 'firsttest';
 
     protected $fillable = ["id"];
 
@@ -22,8 +22,8 @@ class SecondTest extends Model
      */
     public function getShowButtonAttribute()
     {
-        if(auth()->user()->can('admin.access.secondtest.view')){
-            return '<a href="'.route('admin.secondtest.show', $this).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.view').'" class="btn btn-info"><i class="fas fa-eye"></i></a>';
+        if(auth()->user()->can('admin.access.firsttest.view')){
+            return '<a href="'.route('admin.firsttest.show', $this).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.view').'" class="btn btn-info"><i class="fas fa-eye"></i></a>';
         }
         return '';
     }
@@ -33,8 +33,8 @@ class SecondTest extends Model
      */
     public function getEditButtonAttribute()
     {
-        if(auth()->user()->can('admin.access.secondtest.view')){
-            return '<a href="'.route('admin.secondtest.edit', $this).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.edit').'" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
+        if(auth()->user()->can('admin.access.firsttest.view')){
+            return '<a href="'.route('admin.firsttest.edit', $this).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.edit').'" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
         }
         return '';
     }
@@ -44,8 +44,8 @@ class SecondTest extends Model
      */
     public function getDeleteButtonAttribute()
     {
-        if (auth()->user()->can('admin.access.secondtest.delete')) {
-            return '<a href="'.route('admin.secondtest.destroy', $this).'" data-method="delete"
+        if (auth()->user()->can('admin.access.firsttest.delete')) {
+            return '<a href="'.route('admin.firsttest.destroy', $this).'" data-method="delete"
                  data-trans-button-cancel="'.__('buttons.general.cancel').'"
                  data-trans-button-confirm="'.__('buttons.general.crud.delete').'"
                  data-trans-title="'.__('strings.backend.general.are_you_sure').'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.delete').'" class="btn btn-danger"><i class="fas fa-trash"></i></a> ';
